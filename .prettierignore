@@ -1,0 +1,14 @@
+readme.md
+*.ico
+*.log
+*.png
+*.mp4
+.DS_Store
+.env*
+.gitignore
+.idea/
+.prettierignore
+.prettierrc.json
+.vscode/
+dist/
+node_modules/

@@ -1,0 +1,23 @@
+<div class="notes-container">
+    <div class="notes-header">
+        <button mat-stroked-button color="warn" (click)="onDeleteSelected()">Delete Selected</button>
+        <button mat-stroked-button (click)="onAddNew()">Add New Note</button>
+    </div>
+
+    <div class="content-container">
+        <app-note-list
+            [notes]="notes"
+            (edit)="onEdit($event)"
+            (delete)="onDelete($event)"
+            class="note-list"
+        ></app-note-list>
+        <ng-container *ngIf="editingNote">
+            <app-note-detail
+                [note]="editingNote"
+                (save)="onSave($event)"
+                (cancel)="onCancelEdit()"
+                class="note-detail-container"
+            ></app-note-detail>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div *ngIf="editNote" class="note-detail-container">
+    <form>
+        <div class="note-details">id: {{ editNote.id || '-' }}</div>
+        <div class="note-details">Created date: {{ editNote.dateCreated || '-' | date: 'medium' }}</div>
+        <mat-form-field *ngIf="editNote" appearance="fill" class="note-field">
+            <mat-label>Text</mat-label>
+            <textarea cdkTextareaAutosize matInput [(ngModel)]="editNote.text" name="text"></textarea>
+        </mat-form-field>
+        <div class="actions">
+            <button mat-flat-button color="green" (click)="onSave()">Save</button>
+            <button mat-flat-button color="warn" (click)="onCancel()">Cancel</button>
+        </div>
+    </form>
+</div>
